@@ -6,10 +6,23 @@
 #include <string>
 #include <istream>
 #include <sstream>
+#include "Lexer.cpp"
 
 
 int main()
 {
+
+
+    //**********************************
+    //
+    // EXPERIMENTAL
+    //std::string source;
+
+    //Lexer lex(source);
+
+    //**********************************
+
+
     //Read current line of WoodPecker source code in test.lang and store in variable:
     std::string content;
 
@@ -25,6 +38,14 @@ int main()
     while(std::getline(input, content)) {
         temp += content;
     }
+
+    Lexer lex(temp);
+    std::string tokens;
+    
+    tokens = lex.tokenize(temp);
+    std::cout << tokens << std::endl;
+
+
 
     //Close stream to optimise memory
     input.close();
