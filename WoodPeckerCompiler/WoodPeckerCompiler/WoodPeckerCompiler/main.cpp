@@ -35,22 +35,25 @@ int main()
     //Open file stream
 	std::ifstream input(file);
 
+    //Feed in tokens
     while(std::getline(input, content)) {
         temp += content;
     }
 
     Lexer lex(temp);
-    std::string tokens;
+    std::vector<std::string> tokens;
     
     tokens = lex.tokenize(temp);
-    std::cout << tokens << std::endl;
+    //std::cout << tokens << std::endl;
 
+    //DEBUG: Lexer now tokenises!
+    std::cout << tokens[0] << std::endl;
 
 
     //Close stream to optimise memory
     input.close();
 
     //DEBUG
-    std::cout << temp << std::endl;
+    //std::cout << temp << std::endl;
 
 }
