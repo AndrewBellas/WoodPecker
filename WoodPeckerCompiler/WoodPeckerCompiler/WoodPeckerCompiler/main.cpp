@@ -47,7 +47,9 @@ int main()
     //std::cout << tokens << std::endl;
 
     //DEBUG: Lexer now tokenises!
-    std::cout << tokens[0] << std::endl;
+    for (size_t i = 0; i < tokens.size(); i++) {
+        std::cout << tokens[i] << std::endl;
+    }
 
 
     //Close stream to optimise memory

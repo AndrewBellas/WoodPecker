@@ -45,7 +45,7 @@ public:
 	    
 
 		for (std::size_t i = 0; i < tokens.size(); i++) {
-			std::cout << tokens[i] << std::endl;
+			//std::cout << tokens[i] << std::endl;
 		}
 
 		//std::cout << tokens << std::endl;
