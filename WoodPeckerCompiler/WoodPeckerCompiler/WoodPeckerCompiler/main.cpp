@@ -37,7 +37,7 @@ int main()
 
     //Feed in tokens
     while(std::getline(input, content)) {
-        temp += content;
+        temp += ' ' + content;
     }
 
     Lexer lex(temp);
