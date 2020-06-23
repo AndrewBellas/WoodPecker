@@ -1,4 +1,7 @@
 //This lexically analyses the input stream of source code from lang files
+
+#define TOKEN_QUOTE '\''
+
 #include <string>
 #include <iostream>
 #include <vector>
@@ -42,10 +45,20 @@ public:
 
 		//stringSplitter(t_sourceCode, tokens);
 
-	    
+		std::string word;
 
 		for (std::size_t i = 0; i < tokens.size(); i++) {
 			//std::cout << tokens[i] << std::endl;
+			word = tokens[i];
+
+			if (word == "var") {
+
+				//POTENTIAL ERROR MARKED: CAUSE WITHIN MAIN?
+				//ERROR: Does not output in the form ['VAR_DECLARATION', 'var']
+				tokens.push_back("['VAR_DECLARATION', \'" + word + "\'" + "]");
+			}
+
+
 		}
 
 		//std::cout << tokens << std::endl;
